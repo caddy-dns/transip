@@ -32,7 +32,10 @@ func (p *Provider) Provision(ctx caddy.Context) error {
 
 	p.Provider.AuthLogin = repl.ReplaceAll(p.Provider.AuthLogin, "")
 	p.Provider.PrivateKey = repl.ReplaceAll(p.Provider.PrivateKey, "")
-	p.Provider.TokenStorage = filepath.Join(caddy.AppDataDir(), "transip")
+
+	if "" == p.Provider.TokenStorage {
+		p.Provider.TokenStorage = filepath.Join(caddy.AppDataDir(), "transip")
+	}
 
 	if p.Provider.DebugLevel > 0 {
 		p.Provider.DebugOut = zap.NewStdLog(ctx.Logger()).Writer()
