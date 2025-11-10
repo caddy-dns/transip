@@ -4,8 +4,8 @@ go 1.24.4
 
 require (
 	github.com/caddyserver/caddy/v2 v2.8.4
-	github.com/libdns/transip v1.0.2
-	github.com/pbergman/provider v1.0.0
+	github.com/libdns/transip v1.0.3
+	github.com/pbergman/provider v1.0.2
 	go.uber.org/zap v1.27.0
 )
 
